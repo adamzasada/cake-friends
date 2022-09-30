@@ -1,0 +1,30 @@
+<p style="color: green"></p>
+
+<h1>Your Cake Friends!</h1>
+<p></p>
+<table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">Cake Name</th>
+      <th scope="col">Cake Type</th>
+      <th scope="col">Cake Taste</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Visualization</th>
+      <th scope="col">More Details!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <th scope="row"><%= friend.cake_name %></th>
+        <td><%= friend.cake_type %></td>
+        <td><%= friend.cake_taste %></td>
+        <td><%= friend.rating %></td>
+        <td><img src="<%= friend.uri %>" class="img-fluid"></td>
+        <td><%= link_to "Show this tasty 🎂", friend, class:"btn btn-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Cake 😋", new_friend_path, class:"btn btn-success" %>
