@@ -62,8 +62,8 @@ class FriendsController < ApplicationController
   end
 
   def correct_user
-    @friend = current_user.friends.find_by(params[:id])
-    #redirect_to friends_path, notice: "Not authorised to edit or delete this cake.. 👀" if @friend.nil?
+    @friend = current_user.friends.find_by(id: params[:id])
+    redirect_to friends_path, notice: "Not authorised to edit or delete this cake.. 👀" if @friend.nil?
   end
 
   private
