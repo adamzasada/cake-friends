@@ -36,7 +36,7 @@
   </div>
   <p></p>
   <div>
-    <%= form.label :uri, ("Picture 🔗 (#{link_to 'how to get image URL?', 'https://youtu.be/gQsEt64SuIE?t=69'})").html_safe, style: "display: block", class:"form-label" %>
+    <%= form.label :uri, ("Picture 🔗 (#{link_to 'how to get image URL?', 'https://youtu.be/gQsEt64SuIE?t=69', target: "_blank"})").html_safe, style: "display: block", class:"form-label" %>
     <%= form.text_field :uri, class:"form-control", placeholder:"https://imagesvc.meredithcorp.io/v3/mm/image" %>
   </div>
   <br>
