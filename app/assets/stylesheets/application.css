@@ -14,5 +14,5 @@
  *= require_self
  */
 div#cake-table {
- overflow-x: scroll;   
+ overflow-x: auto;   
 }
