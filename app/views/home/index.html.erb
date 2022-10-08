@@ -1,8 +1,8 @@
 <h1>Hello ❤️✨</h1>
 Welcome to Nata's fan page 😘
 <% if current_user %>
-  <p>Hello <%= current_user.email %>!</p>
-  <h3>We are happy to see you <b> back </b> on our website</h3>
+  <p>Hello <u><%= current_user.email %></u>!</p>
+  <h4>We are happy to see you <b> back </b> on our website</h4>
 <% else %>
   <h3><% link_to "Login", new_user_session_path %>Login to add some tasty cakes! <% link_to "Sign up!", new_user_registration_path %></h3>
 <% end %>
