@@ -1,9 +1,10 @@
 <h1>Hello ❤️✨</h1>
 Welcome to Nata's fan page 😘
 <% if current_user %>
+  <p>Hello <%= current_user.email %>!</p>
   <h2>We are happy to see you <b> back </b> on our website</h2>
 <% else %>
-  <h2><% link_to "Login", new_user_session_path %>, to add some tasty cakes! Or <% link_to "Sign up!", new_user_registration_path %> </h2>
+  <h2><% link_to "Login", new_user_session_path %>Login to add some tasty cakes! Or <% link_to "Sign up!", new_user_registration_path %> </h2>
 <% end %>
 Clickthrough to see <i>All Cakes</i> our Website's speciality, <br />
 All of those unbelievable cakes are for your disposal. 
