@@ -29,7 +29,7 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       if @friend.save
-        format.html { redirect_to friend_url(@friend), notice: "Friend was successfully created." }
+        format.html { redirect_to friend_url(@friend), notice: "Cake was successfully created." }
         format.json { render :show, status: :created, location: @friend }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class FriendsController < ApplicationController
   def update
     respond_to do |format|
       if @friend.update(friend_params)
-        format.html { redirect_to friend_url(@friend), notice: "Friend was successfully updated." }
+        format.html { redirect_to friend_url(@friend), notice: "Cake was successfully updated." }
         format.json { render :show, status: :ok, location: @friend }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,14 +56,18 @@ class FriendsController < ApplicationController
     @friend.destroy
 
     respond_to do |format|
-      format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
+      format.html { redirect_to friends_url, notice: "Cake is deleted." }
       format.json { head :no_content }
     end
   end
 
   def correct_user
-    @friend = current_user.friends.find_by(id: params[:id])
-    redirect_to friends_path, notice: "Not authorised to edit or delete this cake.. 👀" if @friend.nil?
+    if current_user.admin? == true
+      @friend = @friend
+    else
+      @friend = current_user.friends.find_by(id: params[:id])
+      redirect_to friends_path, notice: "Not authorised to edit or delete this cake.. 👀" if @friend.nil?
+    end
   end
 
   private
