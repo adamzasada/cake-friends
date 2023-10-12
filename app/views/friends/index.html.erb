@@ -1,0 +1,34 @@
+<p style="color: green"></p>
+
+<h1>Your Cake Friends!</h1>
+<p></p>
+<div id="cake-table">
+<table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <tr>
+      <th scope="col" width="auto">Cake Name</th>
+      <th scope="col" width="auto">Cake Type</th>
+      <th scope="col" width="210px">Cake Taste</th>
+      <th scope="col" width="210px">Rating</th>
+      <th scope="col" width="210px">Visualization</th>
+      <th scope="col" width="auto">More Details!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <th scope="row"><%= friend.cake_name %></th>
+        <td><%= friend.cake_type %></td>
+        <td><%= friend.cake_taste %></td>
+        <td><%= friend.rating %></td>
+        <td><img src="<%= friend.uri %>" class="img-fluid" width="210px" height="auto"></td>
+        <td><%= link_to "Show this tasty 🎂", friend, class:"btn btn-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+<%= link_to "New Cake 😋", new_friend_path, class:"btn btn-success" %>
+<br />
+<br />

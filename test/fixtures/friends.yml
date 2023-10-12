@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cake_name: MyString
+  cake_type: MyString
+  cake_taste: MyString
+  rating: MyString
+  uri: MyString
+
+two:
+  cake_name: MyString
+  cake_type: MyString
+  cake_taste: MyString
+  rating: MyString
+  uri: MyString

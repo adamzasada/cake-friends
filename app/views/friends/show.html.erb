@@ -1,0 +1,21 @@
+<p style="color: green"></p>
+<div class="jumbotron">
+  <h1 class="display-4"><strong>Cake name:</strong> <%= @friend.cake_name %></h1>
+  <hr class="my-4">
+  <p><strong>Cake type:</strong> <%= @friend.cake_type %>
+    <br> <strong>Cake taste:</strong> <%= @friend.cake_taste %> <br>
+    <strong>Rating:</strong> <%= @friend.rating %></p>
+</div>
+<p>
+  <img src="<%= @friend.uri %>" class="img-fluid">
+</p>
+<div>
+
+  <%= link_to "Edit this 🎂", edit_friend_path(@friend), class:"btn btn-success" %> |
+  <%= link_to "Back to 🎂 cakes", friends_path, class:"btn btn-secondary" %>
+  <p>
+    <div>
+  <%= button_to "Delete this cake 😳", @friend, method: :delete, class:"btn btn-danger" %>
+    </div>
+  </p>
+</div>
